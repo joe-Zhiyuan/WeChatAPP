@@ -21,8 +21,12 @@ const Request = function (config) {
   return new Promise((resolve, reject) => {
     wx.request({
       ...config,
-      url: config.url,
-      header: {'content-type': 'application/json'},
+      header: {
+        'content-type': 'application/json',
+        "X-Client-Id": getApp().globalData.xClientId,
+        "Authorization": getApp().globalData.loginUserInfo ? getApp().globalData.loginUserInfo.token:'',
+        "X-Passport-Id": getApp().globalData.loginUserInfo ? getApp().globalData.loginUserInfo.gid : '',
+      },
       success: res => {
         resolve(res)
       },

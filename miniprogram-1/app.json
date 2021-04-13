@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/login/index",
     "pages/logs/logs",
     "pages/webView/employee",
-    "pages/index/phoneLogin"
+    "pages/login/phoneLogin"
   ],
   "window": {
     "backgroundTextStyle": "light",

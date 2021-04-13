@@ -17,7 +17,8 @@ App({
   globalData: {
     userInfo: null,
     wxCode: '',
+    xClientId: 'TTSD_WX_XCX',
     formal: "https://oapi.tticar.com", // 正式地址
-    test: "https://tapi.tticar.com", // 测试地址
+    test: "https://tapi.tticar.com/ttsd", // 测试地址
   }
 })

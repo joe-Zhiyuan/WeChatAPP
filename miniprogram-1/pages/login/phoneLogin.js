@@ -1,7 +1,7 @@
 // pages/index/phoneLogin.js
 // 声明工具类
 const Util = require('../../utils/util')
-const App = getApp()
+const app = getApp()
 Page({
 
   /**
@@ -34,11 +34,26 @@ Page({
     if (phoneInput && phoneInput.length == 11) {
       Util.Request({
         method: 'POST',
-        url: App.globalData.test + "/ttsd/wxApp/sms/1.0",
+        url: app.globalData.test + "/wxApp/sms/1.0",
         data: {
           phone: this.data.phoneInput
         },
       }).then((res) => {
+        let time = 61;
+        console.log(time)
+        let timer = setInterval(() => {
+          time--;
+          if (time <= 0) {
+            clearInterval(timer);
+            this.setData({
+              smsText: "获取验证码"
+            })
+          } else {
+            this.setData({
+              smsText: time + "S"
+            })
+          }
+        }, 1000)
         console.log("获取验证码成功！")
       }).catch((error) => {
         wx.showToast({
@@ -58,9 +73,9 @@ Page({
   phoneLogin() {
     Util.Request({
       method: 'POST',
-      url: App.globalData.test + "/ttsd/wxApp/smslogin/1.0",
+      url: app.globalData.test + "/wxApp/smslogin/1.0",
       data: {
-        code: App.globalData.wxCode,
+        code: app.globalData.wxCode,
         // code: this.data.wxCode,
         phone: this.data.phoneInput,
         sms: this.data.keyInput
