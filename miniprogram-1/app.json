@@ -1,16 +1,41 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/login/login",
     "pages/logs/logs",
     "pages/webView/employee",
     "pages/login/phoneLogin",
-    "pages/index/index"
+    "pages/my/my",
+    "custom-tab-bar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "天天速达",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#575757",
+    "selectedColor": "#4173FF",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/assets/home@2x.png",
+        "selectedIconPath": "/assets/homeActive@2x.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "iconPath": "/assets/piece@2x.png",
+        "selectedIconPath": "/assets/pieceActive@2x.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "/assets/my@2x.png",
+        "selectedIconPath": "/assets/myActive@2x.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
