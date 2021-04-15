@@ -4,13 +4,13 @@
   </view>
   <form class="phoneForm" method="post">
     <view class="phoneInput">
-      <image src="../../assets/登录@2x.png"></image>
-      <input type="number" bindinput="bindPhoneInput" placeholder="输入手机号"/>
+      <image src="/assets/loginIcon@2x.png"></image>
+      <input type="number" bindinput="bindPhoneInput" max-length="11" placeholder="输入手机号"/>
     </view>
     <view class="keyInput">
-      <image src="../../assets/手机号@2x.png"></image>
-      <input type="text" bindinput="bindKeyInput" placeholder="输入验证码"/>
-      <text class="getVerify" bindtap="smsCode">{{smsText}}</text>
+      <image src="/assets/phoneIcon@2x.png"></image>
+      <input type="text" bindinput="bindKeyInput" min-length="4" max-length="6" placeholder="输入验证码"/>
+      <text class="getVerify" bindtap="getSmsCode">{{smsText}}</text>
     </view>
   </form> 
   <button class="loginBtn" bindtap="phoneLogin">登录</button>

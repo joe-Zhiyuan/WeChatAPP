@@ -18,6 +18,9 @@ const formatNumber = n => {
  * 请求方法
  */
 const Request = function (config) {
+  wx.showLoading({
+    title: 'Loading',
+  })
   return new Promise((resolve, reject) => {
     wx.request({
       ...config,
@@ -28,7 +31,12 @@ const Request = function (config) {
         "X-Passport-Id": getApp().globalData.loginUserInfo ? getApp().globalData.loginUserInfo.gid : '',
       },
       success: res => {
-        resolve(res)
+        // setTimeout(() => {
+        // wx.hideLoading({
+        //   complete () {
+            resolve(res)
+        //   }
+        // })}, 2000)
       },
       fail: res => {
         reject(res)

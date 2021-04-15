@@ -18,9 +18,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    employee() { // 用户服务协议
+    // 用户服务协议
+    employee() {
       wx.navigateTo({
-        url: '../webView/employee?url=http://nprivacy.tticar.com/ttsd/employee.html'
+        url: '../webView/employee?url=https://nprivacy.tticar.com/ttsd/employee.html'
       })
     },
   }

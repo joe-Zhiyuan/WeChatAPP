@@ -16,7 +16,8 @@ Page({
     iv: ''
   },
   // 事件处理函数
-  wxLogin() { // 微信快捷登录
+  // 微信快捷登录
+  wxLogin() {
     // Util.Request({
     //   method: 'POST',
     //   url: app.globalData.test + "/wxApp/codeLogin/1.0",
@@ -45,7 +46,8 @@ Page({
       }
     })
   },
-  wxKeyLogin() { // 一键登录方法
+  // 一键登录方法
+  wxKeyLogin() {
     Util.Request({
       method: 'POST',
       url: app.globalData.test + "/wxApp/oneKeyLogin/1.0",
@@ -63,24 +65,15 @@ Page({
     })
   },
   onLoad() {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
+    // 修改头部导航
+    wx.setNavigationBarTitle({
+      title: '登录'
+    })
   },
-  phoneLogin() { // 手机号登录
+  // 手机号登录
+  phoneLogin() {
     wx.navigateTo({
       url: '../login/phoneLogin'
     })
   },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
-
 })

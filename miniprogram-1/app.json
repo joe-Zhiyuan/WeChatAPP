@@ -1,14 +1,15 @@
 {
   "pages": [
-    "pages/login/index",
+    "pages/login/login",
     "pages/logs/logs",
     "pages/webView/employee",
-    "pages/login/phoneLogin"
+    "pages/login/phoneLogin",
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "登录",
+    "navigationBarTitleText": "天天速达",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

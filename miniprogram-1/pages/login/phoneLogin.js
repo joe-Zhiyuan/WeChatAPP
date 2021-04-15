@@ -1,6 +1,6 @@
 // pages/index/phoneLogin.js
 // 声明工具类
-const Util = require('../../utils/util')
+const util = require('../../utils/util')
 const app = getApp()
 Page({
 
@@ -13,26 +13,23 @@ Page({
     smsText: '获取验证码',
     // wxCode: '', // 微信code
   },
-  bindPhoneInput(e) { // 获取输入手机号
+  // 获取输入手机号
+  bindPhoneInput(e) {
     this.setData({
       phoneInput: e.detail.value
     })
   },
-  bindKeyInput(e) { // 获取输入验证码
+  // 获取输入验证码
+  bindKeyInput(e) {
     this.setData({
       keyInput: e.detail.value
     })
   },
-  smsCode() { // 获取验证码
-    // wx.login({ // 获取微信code
-    //   success: res => {
-    //     console.log(res)
-    //     this.data.wxCode = res.code;
-    //   }
-    // })
+  // 通过手机号获取验证码
+  getSmsCode() {
     let phoneInput = this.data.phoneInput;
     if (phoneInput && phoneInput.length == 11) {
-      Util.Request({
+      util.Request({
         method: 'POST',
         url: app.globalData.test + "/wxApp/sms/1.0",
         data: {
@@ -70,8 +67,9 @@ Page({
       });
     }
   },
+  // 验证码登录
   phoneLogin() {
-    Util.Request({
+    util.Request({
       method: 'POST',
       url: app.globalData.test + "/wxApp/smslogin/1.0",
       data: {
@@ -94,7 +92,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 修改头部导航
+    wx.setNavigationBarTitle({
+      title: '登录'
+    })
   },
 
   /**
