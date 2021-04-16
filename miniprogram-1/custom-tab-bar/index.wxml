@@ -1,6 +1,7 @@
 <!--custom-tab-bar/index.wxml-->
 <view class="tabBar" hidden="{{hide}}">
-  <view class="tab" wx:for="{{list}}" wx:key="index">
+  <view class="tab" wx:for="{{list}}" wx:key="index" data-path="{{item.pagePath}}" data-index="{{index}}"
+    bindtap="switchTab">
     <image class="icon" src="{{item.selectedIconPath}}" hidden="{{selected !== index}}"></image>
     <image class="icon" src="{{item.iconPath}}" hidden="{{selected === index}}"></image>
   </view>

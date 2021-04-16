@@ -1,56 +1,51 @@
 // custom-tab-bar/index.js
-// 获取应用实例
-const app = getApp();
-Page({
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+
+  },
 
   /**
-   * 页面的初始数据
+   * 组件的初始数据
    */
   data: {
-    isPhoneX: false,
     selected: 0,
     hide: false,
-    list: [
-      {
+    list: [{
         "showRedDot": false,
         "showBadge": false,
-        "pagePath": "pages/index/index",
+        "pagePath": "/pages/index/index",
         "iconPath": "/assets/home@2x.png",
         "selectedIconPath": "/assets/homeActive@2x.png"
       },
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "/pages/login/login",
         "iconPath": "/assets/piece@2x.png",
         "selectedIconPath": "/assets/pieceActive@2x.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "/pages/my/my",
         "iconPath": "/assets/my@2x.png",
         "selectedIconPath": "/assets/myActive@2x.png"
-      }
-    ]
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+      }],
 
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 组件的方法列表
    */
-  onReady: function () {
-    this.setData({
-      isPhoneX: app.globalData.device.isPhoneX
-    })
-  },
   methods: {
-    switch (e) {
-      const data = e.currenTarget.dataset;
-      console.log("tabBar参数：", data);
-      
-    }
+    switchTab(e) {
+      const data = e.currentTarget.dataset;
+      wx.switchTab({
+        url: data.path
+      })
+      this.setData({
+        selected: data.index
+      })
+    },
   }
+
 })
