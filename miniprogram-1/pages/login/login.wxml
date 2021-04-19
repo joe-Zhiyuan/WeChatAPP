@@ -7,7 +7,9 @@
     </block>
   </view>
   <view class="login">
-    <button class="loginBtn" bindtap="wxLogin">微信快捷登录</button>
+    <!-- <button class="loginBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信快捷登录</button> -->
+    <button class="loginBtn" open-type="getUserInfo" bindgetuserinfo="wxLogin">微信快捷登录</button>
+    <!-- <button class="loginBtn" bindtap="wxLogin">微信快捷登录</button> -->
     <view class="loginPhone" bindtap="phoneLogin">手机号注册/登录</view>
   </view>
   <footer></footer>
