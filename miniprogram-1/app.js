@@ -10,6 +10,7 @@ App({
     if (!this.globalData.wxCode && this.globalData.wxCode == '') {
       wx.login({
         success: res => {
+          console.log(res)
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           this.globalData.wxCode = res.code;
         }
