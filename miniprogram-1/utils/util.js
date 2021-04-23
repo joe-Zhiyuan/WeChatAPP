@@ -32,13 +32,11 @@ const Request = function (config) {
         "X-Passport-Id": getApp().globalData.loginUserInfo ? getApp().globalData.loginUserInfo.gid : '',
       },
       success: res => {
-        setTimeout(() => {
-          wx.hideLoading({
-            complete() {
-              resolve(res)
-            }
-          })
-        }, 2000)
+        wx.hideLoading({
+          complete() {
+            resolve(res)
+          }
+        })
       },
       fail: res => {
         reject(res)
