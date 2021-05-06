@@ -1,2 +1,34 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="container">
+  <view class="header">
+    <view class="headerBg">
+      <image src="/assets/headerBG.png"></image>
+    </view>
+    <view class="user">
+      <!-- 用户详情 -->
+      <view class="userInfo">
+        <view class="userImage">
+          <image></image>
+        </view>
+        <view class="userMessage">
+          <view class="userName">姓名</view>
+          <view class="userPhone">18226851365</view>
+          <view class="userCompany">负责人-小乔总店-第1900店666分店</view>
+        </view>
+      </view>
+      <!-- 用户统计 -->
+      <view class="userCount">
+        <view class="receive">
+          <view class="receiveCound">999</view>
+          <view>收件总量</view>
+        </view>
+        <view class="money">
+          <view class="moneyCound">9999</view>
+          <view>待付货款</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+</view>

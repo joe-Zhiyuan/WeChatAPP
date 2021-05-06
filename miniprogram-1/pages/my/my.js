@@ -12,7 +12,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 修改头部导航
+    wx.setNavigationBarTitle({
+      title: '我的',
+    }),
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#4477FF',
+    })
   },
 
   /**
@@ -45,7 +52,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+  
   },
 
   /**

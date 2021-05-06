@@ -1,4 +1,7 @@
 /* pages/index/phoneLogin.wxss */
+page {
+  background-color: #fff;
+}
 .phone {
   display: flex;
   flex-direction: column;

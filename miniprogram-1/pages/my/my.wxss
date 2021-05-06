@@ -1,1 +1,41 @@
 /* pages/my/my.wxss */
+.container {
+  padding: 0;
+}
+.header {
+  position: relative;
+  height: 377rpx;
+  z-index: 1;
+}
+.headerBg {
+  position: relative;
+  height: 290rpx;
+  overflow: hidden;
+  z-index: -1;
+}
+.headerBg image {
+  position: absolute;
+  width: 150%;
+  top: -230rpx;
+  left: -50rpx;
+}
+.user {
+  position: absolute;
+  width: calc(100% - 64rpx);
+  height: 329rpx;
+  border-radius: 8rpx;
+  background-color: #ffffff;
+  top: 50rpx;
+  left: 32rpx;
+  z-index: 5;
+}
+.userInfo {
+  display: flex;
+  width: 100%;
+  padding: 36rpx 24rpx;
+}
+.userImage {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 50%;
+}
