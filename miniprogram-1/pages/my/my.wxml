@@ -1,5 +1,6 @@
 <!--pages/my/my.wxml-->
 <view class="container">
+  <!-- 个人信息 -->
   <view class="header">
     <view class="headerBg">
       <image src="/assets/headerBG.png"></image>
@@ -8,27 +9,31 @@
       <!-- 用户详情 -->
       <view class="userInfo">
         <view class="userImage">
-          <image></image>
+          <image src="{{userImage}}"></image>
         </view>
         <view class="userMessage">
           <view class="userName">姓名</view>
           <view class="userPhone">18226851365</view>
-          <view class="userCompany">负责人-小乔总店-第1900店666分店</view>
+          <view class="userCompany">负责人-小乔总店-第1900店666分店第1900店666分店第1900店666分店</view>
         </view>
       </view>
       <!-- 用户统计 -->
       <view class="userCount">
-        <view class="receive">
-          <view class="receiveCound">999</view>
-          <view>收件总量</view>
+        <view class="count">
+          <view class="font">999</view>
+          <view class="countName">收件总量</view>
         </view>
-        <view class="money">
-          <view class="moneyCound">9999</view>
-          <view>待付货款</view>
+        <view class="line"></view>
+        <view class="count">
+          <view class="font">9999</view>
+          <view class="countName">待付货款</view>
         </view>
       </view>
 
     </view>
   </view>
-
+  <!-- 功能区域 -->
+  <view>
+    
+  </view>
 </view>
