@@ -1,4 +1,9 @@
 // pages/my/my.js
+// 获取常用变量 app
+const app = getApp()
+// 引入util.js 用于请求方法处理等
+const util = require('../../utils/util')
+
 Page({
 
   /**
@@ -6,6 +11,7 @@ Page({
    */
   data: {
     userImage: '/assets/defaultAvatar@2x.png',
+    login: false,
   },
 
   /**
@@ -39,6 +45,25 @@ Page({
         selected: 2
       })
     }
+  },
+  // 获取用户手机号码用于登录
+  getPhoneNumber: (res) => {
+    console.log(res)
+    util.Request({
+      method: 'POST',
+      url: app.globalData.test + "/wxApp/oneKeyLogin/1.0",
+      data: {
+        code: app.globalData.wxCode,
+        // signature: this.data.signature,
+        // rawData: this.data.rawData,
+        encryptedData: res.detail.encryptedData,
+        iv: res.detail.iv
+      },
+    }).then(res => {
+      console.log(res)
+    }).catch((error) => {
+      console.log(error);
+    })
   },
 
   /**

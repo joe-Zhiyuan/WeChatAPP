@@ -11,10 +11,13 @@
         <view class="userImage">
           <image src="{{userImage}}"></image>
         </view>
-        <view class="userMessage">
+        <view class="userMessage" wx:if="{{login}}">
           <view class="userName">姓名</view>
           <view class="userPhone">18226851365</view>
           <view class="userCompany">负责人-小乔总店-第1900店666分店第1900店666分店第1900店666分店</view>
+        </view>
+        <view class="userMessage" wx:if="{{!login}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+          <text>点击登录/注册</text>
         </view>
       </view>
       <!-- 用户统计 -->
@@ -33,7 +36,18 @@
     </view>
   </view>
   <!-- 功能区域 -->
-  <view>
-    
+  <view class="cont">
+    <view class="contFun">
+      <view class="contItem">
+        <view class="contImage">
+          <image src="/assets/defaultAvatar@2x.png"></image>
+        </view>
+        <text class="contWord">我的地址</text>
+      </view>
+    </view>
+    <!-- 退出登录 -->
+    <view class="signOut">
+      <view class="signOutBtn" bindtap="signOut">退出登录</view>
+    </view>
   </view>
 </view>
